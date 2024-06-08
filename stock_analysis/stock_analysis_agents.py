@@ -6,6 +6,11 @@ from tools.search_tools import SearchTools
 from tools.sec_tools import SECTools
 
 from langchain.tools.yahoo_finance_news import YahooFinanceNewsTool
+from langchain.chat_models import ChatOpenAI
+from keys import openAIkey
+
+
+llm = ChatOpenAI(model= "mistralai/mistral-7b-instruct", openai_api_key = openAIkey, openai_api_base= 'https://openrouter.ai/api/v1'  )
 
 class StockAnalysisAgents():
   def financial_analyst(self):
@@ -23,7 +28,8 @@ class StockAnalysisAgents():
         CalculatorTools.calculate,
         SECTools.search_10q,
         SECTools.search_10k
-      ]
+      ],
+      llm=llm
     )
 
   def research_analyst(self):
@@ -43,7 +49,8 @@ class StockAnalysisAgents():
         YahooFinanceNewsTool(),
         SECTools.search_10q,
         SECTools.search_10k
-      ]
+      ],
+      llm=llm
   )
 
   def investment_advisor(self):
@@ -62,5 +69,6 @@ class StockAnalysisAgents():
         SearchTools.search_news,
         CalculatorTools.calculate,
         YahooFinanceNewsTool()
-      ]
+      ], 
+      llm=llm
     )
