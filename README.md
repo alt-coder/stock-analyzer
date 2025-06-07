@@ -1,6 +1,6 @@
-# Stock Analyzer
+    # Stock Analyzer
 
-This repository contains various tools and experiments for stock analysis and trading. It explores different techniques, including machine learning models for price prediction, reinforcement learning for option trading strategies, and technical analysis methods like Relative Rotation Graphs.
+    This repository contains various tools and experiments for stock analysis and trading. It explores different techniques, including machine learning models for price prediction, reinforcement learning for option trading strategies, and technical analysis methods like Relative Rotation Graphs.
 
 ## Project Components
 
